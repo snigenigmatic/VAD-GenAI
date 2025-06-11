@@ -6,6 +6,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import time
+import os
 
 sys_prompt = """"
     You are an intelligent scene analyzer. 
@@ -14,7 +15,7 @@ sys_prompt = """"
     Avoid adding unnecessary words.
 """
 
-GEMINI_API_KEY = "AIzaSyACa-SSJWU6zst5VfK_HZl1q29jY5VxNe4"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY environment variable not set. Please set it or uncomment and assign directly in the script.")
